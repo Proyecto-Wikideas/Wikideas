@@ -4,9 +4,9 @@
   "description": "",
   "main": "backend/index.js",
   "scripts": {
-    "dev-back": "nodemon --watch backend/index.js",
-    "prod-back": "node backend/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev-back": "nodemon --exec babel-node backend/index.js",
+    "prod-back": "babel-node prod_back/index.js",
+    "build-back": "rm -rf prod_back && babel backend -d prod_back"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,10 @@
     "sequelize": "^6.25.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.6",
+    "@babel/node": "^7.20.0",
+    "@babel/preset-env": "^7.19.4",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.20"
   }

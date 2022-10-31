@@ -1,9 +1,8 @@
-const express = require('express');
-const morgan = require('morgan');
-const cors = require('cors');
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import middlewares from './middlewares/index';
 const app = express();
-const middlewares = require('./middlewares/index');
-
 
 // MIDLEWARES OF CONFIGURATION 
 app.use(cors());
@@ -20,4 +19,4 @@ app.use(middlewares.unknownEndpoint);
 app.use(middlewares.errorHandler);
 
 
-module.exports = app;
+export default app;

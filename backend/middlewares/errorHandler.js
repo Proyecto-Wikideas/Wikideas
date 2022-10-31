@@ -1,6 +1,6 @@
-const logger = require('../utils/logger')
+import logger from '../utils/logger';
 
-module.exports = errorHandler = (error, request, response, next) => {
+export default (error, request, response, next) => {
   logger.error(error.message)
 
   next(error)

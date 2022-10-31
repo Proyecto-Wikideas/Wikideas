@@ -1,5 +1,5 @@
 require('dotenv').config()
 
-module.exports = {
+export default {
   PORT: process.env.PORT || 3001
 }

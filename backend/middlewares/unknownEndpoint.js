@@ -1,3 +1,3 @@
-module.exports = unknownEndpoint = (req, res) => {
+export default (req, res) => {
   res.status(404).send({error: 'unknown endpoint'});
 }

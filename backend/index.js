@@ -1,10 +1,9 @@
-const http = require('http');
-const logger = require('./utils/logger');
-const config = require('./utils/config');
-const app = require('./app');
+import http from 'http';
+import logger from './utils/logger';
+import config from './utils/config';
+import app from './app';
 
-
-// CREATE SERVER AN INIT SERVER IN A PORT 
+// CREATE SERVER AND INIT SERVER IN A PORT 
 const server = http.createServer(app);
 
 server.listen(config.PORT, () => {

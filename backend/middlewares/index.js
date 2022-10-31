@@ -1,7 +1,7 @@
-const errorHandler = require('./errorHandler');
-const unknownEndpoint = require('./unknownEndpoint');
+import errorHandler from './errorHandler';
+import unknownEndpoint from './unknownEndpoint';
 
-module.exports={
+export default{
   errorHandler,
   unknownEndpoint
 }
