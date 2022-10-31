@@ -1,12 +1,12 @@
-const express = require('express')
-const app = express()
+const http = require('http');
+const logger = require('./utils/logger');
+const config = require('./utils/config');
+const app = require('./app');
 
 
+// CREATE SERVER AN INIT SERVER IN A PORT 
+const server = http.createServer(app);
 
-app.get('/', (req, resp) => {
-  resp.send('fjaklsdjfasklñ');
-})
-
-
-app.listen(3001)
-console.log('API FUNCIONANDO')
+server.listen(config.PORT, () => {
+  logger.info(`Server running on port ${config.PORT}`);
+});

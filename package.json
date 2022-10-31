@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-back": "node --watch backend/index.js",
+    "dev-back": "node backend/index.js",
     "prod-back": "node backend/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
