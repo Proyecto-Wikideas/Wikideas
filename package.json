@@ -7,7 +7,7 @@
     "dev-back": "nodemon --exec babel-node backend/index.js",
     "prod-back": "babel-node prod_back/index.js",
     "build-back": "rm -rf prod_back && babel backend -d prod_back",
-    "lint_back": "eslint backend/"
+    "lint-back": "eslint backend/"
   },
   "repository": {
     "type": "git",
