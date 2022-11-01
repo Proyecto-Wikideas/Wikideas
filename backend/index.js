@@ -1,12 +1,11 @@
-const express = require('express')
-const app = express()
+import http from 'http'
+import logger from './utils/logger'
+import config from './utils/config'
+import app from './app'
 
+// CREATE SERVER AND INIT SERVER IN A PORT
+const server = http.createServer(app)
 
-
-app.get('/', (req, resp) => {
-  resp.send('fjaklsdjfasklñ');
+server.listen(config.PORT, () => {
+  logger.info(`Server running on port ${config.PORT}`)
 })
-
-
-app.listen(3001)
-console.log('API FUNCIONANDO')
