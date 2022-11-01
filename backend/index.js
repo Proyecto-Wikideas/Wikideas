@@ -1,22 +1,23 @@
-const express = require('express');
-const app = express()
+import http from 'http'
+import logger from './utils/logger'
+import config from './utils/config'
+import express from 'express';
+import app from './app'
 const sequelize = require('./database');
 require('./model/asociaciones');
 
-
-app.get('/', (req, resp) => {
-  resp.send('Express');
-});
+const server = http.createServer(app)
 
 (async () => {
   try {
     await sequelize.authenticate();
     await sequelize.sync(); 
-    console.log("Conectado!");
+    logger.info("Conexión exitosa a la base de datos");
   } catch (error) {
-    console.log("Error en la conexión: ", error);
+    logger.error("Error en la conexión: ", error);
   }
 })();
 
-app.listen(3001)
-console.log('API FUNCIONANDO')
+server.listen(config.PORT, () => {
+  logger.info(`Server running on port ${config.PORT}`)
+})

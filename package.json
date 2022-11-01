@@ -2,11 +2,12 @@
   "name": "wikideas",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "backend/index.js",
   "scripts": {
-    "dev-back": "node --watch backend/index.js",
-    "prod-back": "node backend/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev-back": "nodemon --exec babel-node backend/index.js",
+    "prod-back": "babel-node prod_back/index.js",
+    "build-back": "rm -rf prod_back && babel backend -d prod_back",
+    "lint-back": "eslint backend/"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,12 @@
     "sequelize": "^6.25.3"
   },
   "devDependencies": {
-    "morgan": "^1.10.0"
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.6",
+    "@babel/node": "^7.20.0",
+    "@babel/preset-env": "^7.19.4",
+    "eslint": "^8.26.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
   }
 }
